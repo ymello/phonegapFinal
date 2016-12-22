@@ -44,57 +44,63 @@
         <link href="dist/css/ratchet.css" rel="stylesheet">
         <script src="dist/js/ratchet.js"></script>
 
-        <title>Assessment Phonegap</title>
-
 
     </head>
 
+    <title>Assessment Phonegap</title>
+    </head>
+
     <body>
+    <header class="bar bar-nav">
+        <h1 class="title">Meu Aparelho</h1>
+    </header>
 
     <div class="app">
 
-        <header class="bar bar-nav">
-            <h1 class="title">Login</h1>
-        </header>
+        <div class="pag3">
 
-
-        <div class="page1">
-
-
-        <form class="input-group">
-            <div class="input-row">
-                <label id="usuario">Usuário</label>
-                <input type="email" class="user" placeholder="Digite seu e-mail">
-            </div>
-            <div class="input-row">
-                <label id="senha">Senha</label>
-                <input type="password" class="password" placeholder="Digite sua senha">
-            </div>
-            <div >
-                <button class="btn btn-primary btn-block">Entrar</button>
-            </div>
-        </form>
-
-
-
-    <button id="logar" class="btn btn-negative btn-block" onclick="facebook()">Login com o Facebook</button>
-            <div id="dados"></div>
-
-
-        </div>
+        <p><button onclick="app.capturePhoto()">Capturar Foto</button></p>
+        <p><img
+                style="display:none;width:250px;height:250px;"
+                id="minhaImagem" src=""/>
+        </p>
 
         <br><br>
 
-        <a href="dispositivo.html">Aqui</a>
+        <h1 id="titulo">Local Storage</h1>
+        <input type="text" id="campo">
+        <button id="salvar">salvar</button>
+
+        </div>
 
     </div>
 
+    <nav class="bar bar-tab">
+        <a class="tab-item active" href="index.html">
+            <span class="icon icon-home"></span>
+            <span class="tab-label">Home</span>
+        </a>
+
+        <a class="tab-item" href="dispositivo.html">
+            <span class="icon icon-gear"></span>
+            <span class="tab-label">Meu Aparelho</span>
+        </a>
+
+        <a class="tab-item" href="minhaconta.html">
+            <span class="icon icon-person"></span>
+            <span class="tab-label">Minha Conta</span>
+        </a>
+
+        <a class="tab-item" href="#">
+            <span class="icon icon-close"></span>
+            <span class="tab-label">Sair</span>
+        </a>
 
     <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-        <script type="text/javascript">
-            app.initialize();
-        </script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript">
+        app.initialize();
+    </script>
     </body>
 
 </html>
