@@ -1,161 +1,133 @@
 <!DOCTYPE html>
-<!--
-    Copyright (c) 2012-2016 Adobe Systems Incorporated. All rights reserved.
-
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
 <html>
 
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no" />
-        <meta name="msapplication-tap-highlight" content="no" />
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
-        <!-- This is a wide open CSP declaration. To lock this down for production, see below. -->
-        <meta http-equiv="Content-Security-Policy" content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *" />
-        <!-- Good default declaration:
-        * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
-        * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
-        * Disables use of eval() and inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
-            * Enable inline JS: add 'unsafe-inline' to default-src
-            * Enable eval(): add 'unsafe-eval' to default-src
-        * Create your own at http://cspisawesome.com
-        -->
-        <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: 'unsafe-inline' https://ssl.gstatic.com; style-src 'self' 'unsafe-inline'; media-src *" /> -->
+<head>
+  <meta charset="utf-8"/>
+  <meta name="format-detection" content="telephone=no"/>
+  <meta name="msapplication-tap-highlight" content="no"/>
+  <meta name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width"/>
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src * 'unsafe-inline'; style-src 'self' 'unsafe-inline'; media-src *"/>
+  <link rel="stylesheet" type="text/css" href="css/index.css"/>
+  <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <link href="dist/css/ratchet.css" rel="stylesheet">
+  <script src="dist/js/ratchet.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  <title>phonegap projeto final</title>
 
-        <link href="dist/css/ratchet.css" rel="stylesheet">
-        <script src="dist/js/ratchet.js"></script>
+  <style>
+    table, th, td {
+      border: 1px solid black;
+      border-collapse: collapse;
+    }
 
-        <style>
-            table, th, td {
-                border: 1px solid black;
-                border-collapse: collapse;
-            }
-            th, td {
-                padding: 5px;
-            }
-            th {
-                text-align: left;
-            }
-        </style>
-    </head>
+    th, td {
+      padding: 5px;
+    }
 
-        <title>Assessment Phonegap</title>
-    </head>
+    th {
+      text-align: left;
+    }
+  </style>
 
-    <body>
 
-    <header class="bar bar-nav">
-        <h1 class="title">Meu Aparelho</h1>
-    </header>
+</head>
 
-    <div class="app">
+<body>
 
-        <div id="deviceready" class="pag2">
+<header class="bar bar-nav">
+  <h1 class="title">Meu Aparelho</h1>
+</header>
+
+<div class="app">
+
+  <div id="deviceready" class="pag2">
 
     <table class="tabela">
-        <tr>
-            <th>Versão do Cordova</th>
-            <th><span id="cordova"></span></th>
-        </tr>
-        <tr>
-            <th>Modelo</th>
-            <th><span id="model"></span></th>
-        </tr>
-        <tr>
-            <th>Plataforma</th>
-            <th><span id="platform"></span></th>
-        </tr>
-        <tr>
-            <th>UUID</th>
-            <th><span id="deviceID"></span></th>
-        </tr>
-        <tr>
-            <th>Versão do SO</th>
-            <th><span id="version"></span></th>
-        </tr>
-        <tr>
-            <th>Fabricante</th>
-            <th><span id="manufacturer"></span></th>
-        </tr>
-        <tr>
-            <th>Emulador</th>
-            <th><span id="isVirtual"></span></th>
-        </tr>
-        <tr>
-            <th>Serial</th>
-            <th><span id="serial"></span></th>
-        </tr>
-        <tr>
-            <th>Acelerômetro X</th>
-            <th><span id="celeraX"></span></th>
-        </tr>
-        <tr>
-            <th>Acelerômetro Y</th>
-            <th><span id="celeraY"></span></th>
-        </tr>
-        <tr>
-            <th>Timestamp</th>
-            <th><span id="celeraTS"></span></th>
-        </tr>
-        <tr>
-            <th>Atualizar</th>
-            <th><span id="atualizar"></span></th>
-        </tr>
+      <tr>
+        <th>Versão do Cordova</th>
+        <th><span id="cordova"></span></th>
+      </tr>
+      <tr>
+        <th>Modelo</th>
+        <th><span id="model"></span></th>
+      </tr>
+      <tr>
+        <th>Plataforma</th>
+        <th><span id="platform"></span></th>
+      </tr>
+      <tr>
+        <th>UUID</th>
+        <th><span id="deviceID"></span></th>
+      </tr>
+      <tr>
+        <th>Versão do SO</th>
+        <th><span id="version"></span></th>
+      </tr>
+      <tr>
+        <th>Fabricante</th>
+        <th><span id="manufacturer"></span></th>
+      </tr>
+      <tr>
+        <th>Emulador</th>
+        <th><span id="isVirtual"></span></th>
+      </tr>
+      <tr>
+        <th>Serial</th>
+        <th><span id="serial"></span></th>
+      </tr>
+      <tr>
+        <th>Acelerômetro X</th>
+        <th><span id="celeraX"></span></th>
+      </tr>
+      <tr>
+        <th>Acelerômetro Y</th>
+        <th><span id="celeraY"></span></th>
+      </tr>
+      <tr>
+        <th>Timestamp</th>
+        <th><span id="celeraTS"></span></th>
+      </tr>
+      <tr>
+        <th>Atualizar</th>
+        <th><span id="atualizar"></span></th>
+      </tr>
     </table>
+    <br><br>
 
-            <br><br>
+    <nav class="bar bar-tab">
+      <a class="tab-item active" href="index.html">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">Home</span>
+      </a>
 
-            <nav class="bar bar-tab">
-                <a class="tab-item active" href="index.html">
-                    <span class="icon icon-home"></span>
-                    <span class="tab-label">Home</span>
-                </a>
+      <a class="tab-item" href="dispositivo.html">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Meu Aparelho</span>
+      </a>
 
-                <a class="tab-item" href="dispositivo.html">
-                    <span class="icon icon-gear"></span>
-                    <span class="tab-label">Meu Aparelho</span>
-                </a>
+      <a class="tab-item" href="minhaconta.html">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Minha Conta</span>
+      </a>
 
-                <a class="tab-item" href="minhaconta.html">
-                    <span class="icon icon-person"></span>
-                    <span class="tab-label">Minha Conta</span>
-                </a>
+      <a class="tab-item" href="#">
+        <span class="icon icon-close"></span>
+        <span class="tab-label">Sair</span>
+      </a>
 
-                <a class="tab-item" href="#">
-                    <span class="icon icon-close"></span>
-                    <span class="tab-label">Sair</span>
-                </a>
+    </nav>
 
-            </nav>
+  </div>
 
-        </div>
+</div>
 
-    </div>
-
-    <script type="text/javascript" src="cordova.js"></script>
-    <script type="text/javascript" src="js/index.js"></script>
-    <script type="text/javascript">
-        app.initialize();
-    </script>
-    </body>
+<script type="text/javascript" src="cordova.js"></script>
+<script type="text/javascript" src="js/index.js"></script>
+<script type="text/javascript">
+  app.initialize();
+</script>
+</body>
 
 </html>
