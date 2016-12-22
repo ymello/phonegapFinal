@@ -22,41 +22,38 @@
 
         <div class="pag3">
 
-        <p><button onclick="app.capturePhoto()">Capturar Foto</button></p>
-        <p><img
-                style="display:none;width:250px;height:250px;"  id="minhaImagem" src=""/>
+        <p><button class="btn btn-block" onclick="app.capturePhoto()">Capturar Foto</button></p>
+        <p>
+          <img  style="display:none; width:250px; height:250px;" id="minhaImagem" src=""/>
         </p>
-
         <br><br>
-
         <h1 id="titulo">Local Storage</h1>
         <input type="text" id="campo">
-        <button id="salvar">salvar</button>
+        <button class="btn btn-block" id="salvar">salvar</button>
 
         </div>
 
     </div>
 
     <nav class="bar bar-tab">
-        <a class="tab-item active" href="index.html">
-            <span class="icon icon-home"></span>
-            <span class="tab-label">Home</span>
-        </a>
+      <a class="tab-item" href="home.html">
+        <span class="icon icon-home"></span>
+        <span class="tab-label">Home</span>
+      </a>
+      <a class="tab-item" href="dispositivo.html">
+        <span class="icon icon-gear"></span>
+        <span class="tab-label">Meu Aparelho</span>
+      </a>
+      <a class="tab-item active" href="minhaconta.html">
+        <span class="icon icon-person"></span>
+        <span class="tab-label">Minha Conta</span>
+      </a>
+      <a class="tab-item" href="index.html">
+        <span class="icon icon-close"></span>
+        <span class="tab-label">Sair</span>
+      </a>
 
-        <a class="tab-item" href="dispositivo.html">
-            <span class="icon icon-gear"></span>
-            <span class="tab-label">Meu Aparelho</span>
-        </a>
-
-        <a class="tab-item" href="minhaconta.html">
-            <span class="icon icon-person"></span>
-            <span class="tab-label">Minha Conta</span>
-        </a>
-
-        <a class="tab-item" href="#">
-            <span class="icon icon-close"></span>
-            <span class="tab-label">Sair</span>
-        </a>
+    </nav>
 
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/index.js"></script>

@@ -28,29 +28,17 @@
 
   <div class="page1">
 
-    <form class="input-group">
-      <div class="input-row">
-        <label id="usuario">Usuário</label>
+    <form>
         <input type="email" class="user" placeholder="Digite seu e-mail">
-      </div>
-      <div class="input-row">
-        <label id="senha">Senha</label>
         <input type="password" class="password" placeholder="Digite sua senha">
-      </div>
-      <div>
-        <button class="btn btn-primary btn-block">Entrar</button>
-      </div>
+      <button class="btn btn-primary btn-block">ENTRAR</button>
+      <button class="btn btn-negative btn-block" id="logar" onclick="facebook()">LOGAR FACEBOOK</button>
     </form>
-
-    <button id="logar" class="btn btn-negative btn-block" onclick="facebook()">Login com o Facebook</button>
+<br><br>
     <div id="dados"></div>
-
   </div>
-
   <br><br>
-
-  <a href="dispositivo.html">Aqui</a>
-
+  <a href="dispositivo.html" class="btn btn-block">PULAR PARA O APP</a>
 </div>
 <script type="text/javascript" src="cordova.js"></script>
 <script type="text/javascript" src="js/index.js"></script>
